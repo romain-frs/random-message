@@ -1,17 +1,36 @@
-const messages = [
-  "Believe in yourself and all that you are.",
-  "Your limitation—it's only your imagination.",
-  "Sometimes later becomes never. Do it now.",
-  "Push yourself, because no one else is going to do it for you.",
-  "Great things never come from comfort zones.",
-  "Dream it. Wish it. Do it."
-];
+const messageComponents = {
+  start: [
+    "Believe in yourself",
+    "Never forget",
+    "Always remember",
+    "Trust the process"
+  ],
 
-const motivation = () => {
-  const randomNumber = Math.floor(Math.random() * messages.length);
-  console.log(messages[randomNumber]);
+  middle: [
+    "that hard work pays off",
+    "that consistency is key",
+    "that failure is part of success",
+    "that discipline beats motivation"
+  ],
+
+  end: [
+    "and keep going.",
+    "even when it's hard.",
+    "no matter what.",
+    "every single day."
+  ]
 };
 
-motivation();
+const randomElement = (array) => {
+  return array[Math.floor(Math.random() * array.length)];
+};
 
-console.log('ça marche')
+const motivation = () => {
+  const start = randomElement(messageComponents.start);
+  const middle = randomElement(messageComponents.middle);
+  const end = randomElement(messageComponents.end);
+
+  console.log(`${start}, ${middle}, ${end}`);
+};
+
+motivation()
