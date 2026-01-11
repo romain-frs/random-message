@@ -12,3 +12,5 @@ const motivation = () => {
 };
 
 motivation();
+
+console.log('ça marche')
